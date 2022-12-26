@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="header.shipping" htmlTag="div" htmlClass="shipping" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="header_shipping" template="Magento_Theme::html/header_shipping.phtml" ifconfig="carriers/freeshipping/active">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Free shipping for all orders</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="main.content" before="footer" after="-" />
+
+        <referenceBlock name="form.subscribe">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Magento_Theme::html/subscribe.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
