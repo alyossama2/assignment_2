@@ -18,11 +18,5 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="main.content" before="footer" after="-" />
-
-        <referenceBlock name="form.subscribe">
-            <action method="setTemplate">
-                <argument name="template" xsi:type="string">Magento_Theme::html/subscribe.phtml</argument>
-            </action>
-        </referenceBlock>
     </body>
 </page>
